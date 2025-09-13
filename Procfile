@@ -1,1 +1,1 @@
-web: node pokemon-showdown $PORT
+web: npm run start:minimal
