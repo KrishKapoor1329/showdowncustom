@@ -889,7 +889,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		name: "[Gen 6] 2v2 Multi Random Mega Battle",
 		desc: "2 players vs 2 players, each player has 6 random Pokémon with guaranteed 1 Mega, Gen 6 mechanics.",
-		mod: 'gen6',
+		mod: 'gen6multimega',
 		team: 'random',
 		gameType: 'multi',
 		searchShow: false,
@@ -900,38 +900,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'Team Preview', 'Sleep Clause Mod', 'Species Clause', 'OHKO Clause', 'Evasion Clause',
 			'Obtainable', 'HP Percentage Mod', 'Cancel Mod', 'Illusion Level Mod'
 		],
-		onBegin() {
-			// Force at least one Mega per team
-			const megaPokemon = [
-				'venusaur', 'charizard', 'blastoise', 'alakazam', 'gengar', 'kangaskhan', 'pinsir',
-				'gyarados', 'aerodactyl', 'mewtwo', 'ampharos', 'scizor', 'heracross', 'houndoom',
-				'tyranitar', 'blaziken', 'gardevoir', 'mawile', 'aggron', 'medicham', 'manectric',
-				'banette', 'absol', 'garchomp', 'lucario', 'abomasnow', 'beedrill', 'pidgeot',
-				'slowbro', 'steelix', 'sceptile', 'swampert', 'sableye', 'sharpedo', 'camerupt',
-				'altaria', 'glalie', 'salamence', 'metagross', 'latias', 'latios', 'rayquaza',
-				'lopunny', 'gallade', 'audino', 'diancie'
-			];
-			
-			for (const side of this.sides) {
-				let hasMega = false;
-				for (const pokemon of side.pokemon) {
-					if (pokemon.item && pokemon.item.endsWith('ite')) {
-						hasMega = true;
-						break;
-					}
-				}
-				if (!hasMega) {
-					// Find a Pokemon that can Mega and give it a Mega Stone
-					for (const pokemon of side.pokemon) {
-						const speciesId = pokemon.species.id;
-						if (megaPokemon.includes(speciesId)) {
-							pokemon.item = this.toID(speciesId + 'ite');
-							break;
-						}
-					}
-				}
-			}
-		}
 	},
 // ... existing code ...
 	{

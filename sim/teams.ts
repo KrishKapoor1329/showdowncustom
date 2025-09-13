@@ -632,6 +632,8 @@ export const Teams = new class Teams {
 		const formatID = toID(format);
 		if (mod === 'gen9ssb') {
 			TeamGenerator = require(`../data/mods/gen9ssb/random-teams`).default;
+		} else if (mod === 'gen6-mega') {
+			TeamGenerator = require(`../data/random-battles/gen6-mega/teams`).default;
 		} else if (formatID.includes('gen9donotuserandombattle')) {
 			TeamGenerator = require(`../data/random-battles/donotuse/teams`).default;
 		} else if (formatID.includes('gen9babyrandombattle')) {
