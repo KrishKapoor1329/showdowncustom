@@ -355,3 +355,21 @@ For example:
 People often use "tier" to mean "format", but in rulesets, the difference is important. A format is a list of rules for a game you can play, such as "Gen 8 OU". A tier is a list of Pokémon which can be banned or unbanned, such as "OU".
 
 `- OU, + Ubers` - ban all Pokémon currently in OU and unban all Pokémon currently in Ubers
+
+## **Key Changes Made:**
+
+1. **✅ 2v2 Multi-battle** - Changed from 3v3 to 2v2 (4 players total)
+2. **✅ 6 Pokémon per player** - Changed `Max Team Size = 2` to `Max Team Size = 6`
+3. **✅ Guaranteed 1 Mega** - Added `onValidateTeam` function that ensures each team has at least 1 Mega Stone
+4. **✅ Updated description** - Reflects the new format specifications
+
+## **How the Mega Guarantee Works:**
+
+The `onValidateTeam` function checks if any Pokémon on the team has a Mega Stone (items ending with 'ite') and returns an error if none are found, forcing players to have at least one Mega Evolution available.
+
+After making this change, run:
+```bash
+npm run build
+```
+
+Then restart your server to see the updated format!
