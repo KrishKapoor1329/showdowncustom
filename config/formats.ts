@@ -3333,20 +3333,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Obtainable', 'Sleep Clause Mod', 'HP Percentage Mod', 'Cancel Mod', 'Illusion Level Mod'],
 	},
 	{
-		name: "[Gen 6] 3v3 Multi Random Mega Battle",
-		desc: "3 players vs 3 players, each player has 2 random Pokémon, Megas allowed, Gen 6 mechanics.",
-		mod: 'gen6',
-		team: 'random',
-		gameType: 'multi',
-		searchShow: false,
-		tournamentShow: false,
-		rated: false,
-		ruleset: [
-			'Max Team Size = 2',
-			'Team Preview', 'Sleep Clause Mod', 'Species Clause', 'OHKO Clause', 'Evasion Clause',
-			'Obtainable', 'HP Percentage Mod', 'Cancel Mod', 'Illusion Level Mod'
-		],
-	},
 	{
 		name: "[Gen 6] Battle Factory",
 		desc: `Randomized teams of Pok&eacute;mon for a generated Smogon tier with sets that are competitively viable.`,
